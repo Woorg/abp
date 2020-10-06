@@ -1,0 +1,40 @@
+
+mixin header(data)
+    header.header&attributes(attributes)
+        .header__container.container
+
+            .header__top.flex
+                a.header__logo.logo(href="#")
+                    != pugHelpers.Icon.call(locals, {iconName: 'logo', className: 'logo__icon'})
+
+                +nav().header__nav
+
+
+            .header__body
+                h1.header__title
+                    span International  publishing house
+                    | Thousands of stories Hear yours
+
+                dl.header__stats
+                    .header__stats-item
+                        dt.header__stats-term 700+
+                        dd.header__stats-desc  titles in the catalogue
+                    .header__stats-item
+                        dt.header__stats-term 17000+
+                        dd.header__stats-desc reviews at Audible
+
+        +cookies().header__cookies
+
+        .header__slider
+            .header__slider-item
+                picture.header__slider-image
+                    source(data-srcset="assets/images/general/hero-img-1.webp" type="image/webp")
+                    img.lazy(data-src="assets/images/general/hero-img-1.jpg", alt="")
+            .header__slider-item
+                picture.header__slider-image
+                    source(data-srcset="assets/images/general/hero-img-2.webp" type="image/webp")
+                    img.lazy(data-src="assets/images/general/hero-img-2.jpg", alt="")
+            .header__slider-item
+                picture.header__slider-image
+                    source(data-srcset="assets/images/general/hero-img-3.webp" type="image/webp")
+                    img.lazy(data-src="assets/images/general/hero-img-3.jpg", alt="")

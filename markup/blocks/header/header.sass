@@ -1,0 +1,113 @@
+.header
+  position: relative
+  min-height: 1015px
+  overflow: hidden
+  &__container
+    position: relative
+    z-index: 1
+    padding-top: 20px
+    padding-bottom: 20px
+    justify-content: space-between
+    // height: 100%
+  // &__logo
+  //   +mq($medium)
+  //     margin-right: auto
+
+  &__nav
+    margin-top: 38px
+    margin-left: auto
+
+  &__body
+    margin-left: auto
+    padding-top: 76px
+    // padding-left: 473px
+    // padding-left: 546px
+    max-width: 630px
+    width: 100%
+    display: flex
+    flex-direction: column
+
+  &__title
+    margin-bottom: 23px
+    color: #1b1e64
+    font-size: 60px
+    font-weight: 500
+    line-height: 1.233
+    span
+      display: block
+      color: rgba(1, 1, 1, 0.5)
+      font-size: 18px
+      font-weight: 400
+      line-height: 1
+
+  &__stats
+    display: flex
+    flex-direction: column
+
+  &__stats-item
+    margin-bottom: 18px
+
+  &__stats-term
+    color: rgba(1, 1, 1, 0.4)
+    font-size: 80px
+    font-weight: 500
+
+
+  &__stats-desc
+    margin-left: 87px
+    color: #1b1e64
+    font-size: 26px
+    font-weight: 500
+
+
+  // .tns-outer
+  //   position: absolute
+  //   top: 0
+  //   left: 0
+  //   bottom: 0
+  //   right: 0
+
+  &__slider
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+
+    // height: 1015px
+    height: 100%
+    overflow: hidden
+
+  // .tns-controls
+  //   display: none
+  // .tns-outer
+  //   [data-action]
+  //     display: none
+
+  &__slider-item
+    height: 1015px
+    // background-position: 50% 0
+    // background-repeat: no-repeat
+    // background-size: cover
+    overflow: hidden
+
+  &__slider-image
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &__cookies
+    z-index: 1
+    position: absolute
+    top: calc(100% - 50px)
+    left: 0
+    right: 0
+
+
+.logo
+  &__icon
+    width: 80px
+
+.logo_second
+  .logo__icon
+    width: 189px

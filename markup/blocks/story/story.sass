@@ -1,0 +1,113 @@
+.story
+    overflow: hidden
+    &__container
+        padding-top: 60px
+        // padding-bottom: 60px
+        padding-bottom: 98px
+    // &__title
+
+    &__timeline
+        position: relative
+        padding-bottom: 308px
+        min-height: 582px
+        &::after
+            position: absolute
+            top: calc(100% - 308px)
+            left: 108px
+            content: ''
+            width: 1064px
+            height: 308px
+            background: url('../images/general/story-line.svg') 0 0 no-repeat
+            background-size: cover
+
+    &__item
+        position: absolute
+        padding-top: 20px
+        padding-right: 7px
+        padding-bottom: 43px
+        padding-left: 23px
+        background: url('../images/general/story-item.svg') 50% 100% no-repeat
+        background-size: cover
+        &::after
+            position: absolute
+            top: 100%
+            left: calc(50% - 5px)
+            content: ''
+            width: 2px
+            background: url('../images/general/line.svg') 50% 0 repeat-y
+            background-size: 100%
+            transform: translateX(-50%)
+        &:nth-child(1)
+            bottom: 60px
+            left: 6px
+            width: 263px
+            height: 166px
+            &::after
+                top: 100%
+                height: 44px
+        &:nth-child(2)
+            bottom: 338px
+            left: 154px
+            width: 290px
+            height: 153px
+            background: url('../images/general/story-item-2.svg') 0% 100% no-repeat
+            // background-position: calc(100% + 16px) 100%
+
+            &::after
+                top: calc(100% + 2px)
+                height: 288px
+                left: calc(50% - 1px)
+
+
+        &:nth-child(3)
+            bottom: 146px
+            left: 305px
+            width: 320px
+            height: 164px
+            background: url('../images/general/story-item-3.svg') 100% 100% no-repeat
+
+            &::after
+                top: calc(100% + 2px)
+                height: 45px
+                left: calc(50% + 6px)
+
+        &:nth-child(4)
+            bottom: 406px
+            left: 496px
+            width: 275px
+            height: 153px
+            background-position: calc(100% + 15px) 100%
+            background: url('../images/general/story-item-4.svg') 100% 100% no-repeat
+            &::after
+                top: calc(100% + 2px)
+                height: 272px
+                left: calc(50% + 6px)
+
+
+
+        &:nth-child(5)
+            bottom: 236px
+            left: 664px
+            width: 276px
+            height: 132px
+            background: url('../images/general/story-item-5.svg') 100% 100% no-repeat
+            &::after
+                top: calc(100% + 2px)
+                height: 60px
+                left: calc(50% - 6px)
+
+        &:nth-child(6)
+            bottom: 455px
+            left: 840px
+            width: 248px
+            height: 160px
+            background: url('../images/general/story-item-6.svg') 100% 100% no-repeat
+            &::after
+                top: calc(100% + 2px)
+                height: 244px
+                left: calc(50% - 1px)
+
+    &__item-text
+        font-size: 18px
+        font-weight: 400
+        line-height: 1.888

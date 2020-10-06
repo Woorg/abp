@@ -1,0 +1,57 @@
+.flex
+  display: flex
+
+.title
+  color: #1b1e64
+  font-size: 50px
+  font-weight: 700
+  line-height: 1.22
+
+
+.button
+  +resetbutton()
+  padding-top: 8px
+  padding-right: 55px
+  padding-bottom: 14px
+  padding-left: 55px
+  height: 42px
+  background-color: #1b1e64
+  color: #ffffff
+  font-size: 16px
+  font-weight: 700
+  line-height: 1
+  letter-spacing: 1px
+  text-decoration: none
+  +tr(background-color .3s ease)
+
+  &:hover
+    background-color: lighten(#1b1e64, 10)
+    +tr(background-color .3s ease)
+
+
+
+
+.wysiwyg
+  h2
+  font-size: 24px
+  line-height: 1.333
+  +mq($small)
+    font-size: 48px
+    line-height: 1.166
+
+  p
+    margin-bottom: 16px
+    color: #000000
+    font-size: 18px
+    font-weight: 400
+    line-height: 1.888
+    &:last-of-type
+      margin-bottom: 24px
+    +mq($small)
+      margin-bottom: 40px
+      font-size: 18px
+
+  strong
+    font-size: 30px
+    font-weight: 300
+    line-height: 1.7
