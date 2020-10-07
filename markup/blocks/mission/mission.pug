@@ -14,11 +14,12 @@ mixin mission(data)
 
 
         picture.mission__bg
-            source(type='image/webp' media='(min-width:600px)' data-srcset='assets/images/general/mission-bg.webp')
-            source(type='image/webp' media='(min-width:300px)' data-srcset='assets/images/general/mission-bg-small.webp')
+            source(type='image/webp' media='(min-width:1200px)' data-srcset='assets/images/general/mission-1.webp')
+            source(type='image/webp' media='(min-width:600px)' data-srcset='assets/images/general/mission-1-1.webp')
+            source(type='image/webp' media='(min-width:300px)' data-srcset='assets/images/general/mission-1-1-1.webp')
 
-            source(type='image/png' media='(min-width:600px)' data-srcset='assets/images/general/mission-bg.jpg')
-            source(type='image/png' media='(min-width:300px)' data-srcset='assets/images/general/mission-bg-small.jpg')
+            source(type='image/jpeg' media='(min-width:1200px)' data-srcset='assets/images/general/mission-1.jpg')
+            source(type='image/jpeg' media='(min-width:600px)' data-srcset='assets/images/general/mission-1-1.jpg')
+            source(type='image/jpeg' media='(min-width:300px)' data-srcset='assets/images/general/mission-1-1-1.jpg')
 
-
-            img.lazy(data-srcset="assets/images/general/mission-bg-small.jpg 300w, assets/images/general/mission-bg.jpg 600w"  alt="")
+            img.lazy(data-srcset="assets/images/general/mission-1.jpg 300w, assets/images/general/mission-1-1.jpg 600w assets/images/general/mission-1-1-1.jpg 1200w"  alt="")

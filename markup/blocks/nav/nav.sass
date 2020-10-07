@@ -69,40 +69,67 @@
         justify-content: flex-start
     &__item
         margin-bottom: 35px
-        max-width: 25%
+        // max-width: 25%
         width: 100%
+
+        &:nth-child(odd)
+            max-width: 72%
+            +mq($large)
+                max-width: 30%
+        &:nth-child(even)
+            max-width: 28%
+            +mq($large)
+                max-width: 18%
+
         &:nth-child(1)
-            max-width: 210px
-            +mq($medium)
-                max-width: 28%
-
-
+            order: 0
+            +mq($large)
+                order: 0
         &:nth-child(2)
-            max-width: 18%
+            order: 3
+            +mq($large)
+                order: 1
+                max-width: 18%
 
         &:nth-child(3)
-            max-width: 210px
-            +mq($medium)
-                max-width: 31%
+            display: none
+            +mq($large)
+                order: 2
+                display: block
 
         &:nth-child(4)
-            max-width: 21%
+            display: none
+            +mq($large)
+                order: 3
+                display: block
 
         &:nth-child(5)
-            max-width: 210px
-            +mq($medium)
-                max-width: 28%
-
-        &:nth-child(6)
-            max-width: 19%
-
-        &:nth-child(7)
-            max-width: 210px
-            +mq($medium)
+            max-width: 25%
+            order: 1
+            +mq($large)
+                order: 4
                 max-width: 30%
 
+        &:nth-child(6)
+            order: 5
+            +mq($large)
+                order: 5
+
+        &:nth-child(7)
+            order: 2
+            +mq($large)
+                order: 6
+
         &:nth-child(8)
-            max-width: 19%
+            display: none
+            +mq($large)
+                order: 7
+                display: block
+
+        &:nth-child(9)
+            order: 4
+            +mq($large)
+                display: none
 
     &__link
         color: #ffffff
@@ -115,11 +142,23 @@
             color: darken(#fff, 10)
             +tr(.3s ease)
 
+
 .nav-sec_second
+
     .nav-sec__item
         margin-bottom: 6px
+        max-width: 100px
+        min-width: 100px
         +mq($medium)
+            margin-bottom: 30px
+            text-align: right
+        +mq($large)
             margin-bottom: 12px
+            text-align: left
+
+        &:nth-child(3)
+            // +mq($medium)
+            display: block
 
     .nav-sec__link
         color: #eaece9
@@ -127,12 +166,14 @@
         font-weight: 400
         line-height: 1
         +mq($medium)
+            color: #eaece9
+            font-size: 14px
+            line-height: 1.071
+
+        +mq($large)
             color: #ffffff
             font-size: 14px
-            font-weight: 400
             line-height: 1.071
+
         &:hover
             color: darken(#ffffff, 10)
-
-
-

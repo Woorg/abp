@@ -77,7 +77,7 @@ import FastAverageColor from 'fast-average-color';
         slidesToShow: 1,
         mobileFirst: true,
         loop: true,
-        speed: 900,
+        speed: 600,
         focusOnSelect: true,
         waitForAnimate: false,
         adaptiveHeight: false,
@@ -98,36 +98,29 @@ import FastAverageColor from 'fast-average-color';
       $storySlider.slick({
         dots: true,
         mobileFirst: true,
-        // loop: true,
-        // lazyLoad: 'ondemand',
-        // speed: 300,
-        // fade: true,
         focusOnSelect: true,
         waitForAnimate: true,
         adaptiveHeight: true,
         arrows: false,
-
+        infinite: false,
         responsive: [
         {
             breakpoint: 1,
             settings: {
               slidesToShow: 1,
-              // slidesToScroll: 1,
               fade: true,
               adaptiveHeight: true,
           }
         },
         {
-          breakpoint: 500,
+          breakpoint: 600,
           settings: {
             slidesToShow: 2,
-            // slidesToScroll: 1,
-            // fade: true,
             adaptiveHeight: true,
           }
         },
         {
-          breakpoint: 900,
+          breakpoint: 1200,
           settings: 'unslick',
         }]
       });
@@ -163,8 +156,18 @@ import FastAverageColor from 'fast-average-color';
           {
               breakpoint: 600,
               settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                arrows: false,
+
+              }
+          },
+            {
+              breakpoint: 1200,
+              settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
+                arrows: true,
                 prevArrow: '.press__arrow_back',
                 nextArrow: '.press__arrow_next',
               }

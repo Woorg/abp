@@ -3,12 +3,13 @@
     &__container
         padding-top: 40px
         padding-bottom: 40px
-        +mq($medium)
+        +mq($large)
             padding-top: 60px
             padding-bottom: 60px
     &__title
         margin-bottom: 30px
-        +mq($medium)
+
+        +mq($large)
             margin-bottom: 66px
 
     &__slider-w
@@ -17,12 +18,27 @@
     &__slider
         margin-right: -35px
         margin-left: -35px
+        +mq($medium)
+            margin-right: -15px
+            margin-left: -15px
+
+        +mq($large)
+            margin-right: -35px
+            margin-left: -35px
+
 
     // &__slide
 
     &__slide-w
         padding-right: 35px
         padding-left: 35px
+        +mq($medium)
+            padding-right: 15px
+            padding-left: 15px
+        +mq($large)
+            padding-right: 35px
+            padding-left: 35px
+
     &__date
         margin-bottom: 10px
         color: #1b1e64
@@ -70,17 +86,20 @@
             color: lighten(#1b1e64, 10)
             +tr(.3s ease)
 
-
-
     &__arrow
         +resetbutton()
+        z-index: 1
         position: absolute
         top: calc(50% - 62px)
+        display: none
         transform: translateY(-50%)
         +tr(.3s ease)
+        +mq($large)
+            display: block
         &:hover
             opacity: .8
             +tr(.3s ease)
+
     &__arrow_back
         left: -72px
     &__arrow_next
@@ -92,6 +111,8 @@
             margin-bottom: 0
             padding-bottom: 40px
             +mq($medium)
+                padding-bottom: 60px
+            +mq($large)
                 padding-bottom: 82px
 
     .slick-dots

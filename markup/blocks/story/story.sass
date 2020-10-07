@@ -3,21 +3,25 @@
     &__container
         padding-top: 40px
         padding-bottom: 40px
-        +mq($medium)
+        +mq($large)
             padding-top: 60px
             padding-bottom: 98px
     &__title
         margin-bottom: 30px
-        +mq($medium)
+        +mq($large)
             margin-bottom: 0
 
     &__timeline
         position: relative
-        +mq($medium)
+        margin-right: -35px
+        margin-left: -35px
+        +mq($large)
+            margin-right: 0
+            margin-left: 0
             padding-bottom: 308px
             min-height: 582px
         &::after
-            +mq($medium)
+            +mq($large)
                 position: absolute
                 top: calc(100% - 308px)
                 left: 108px
@@ -30,12 +34,14 @@
         &::before
             position: absolute
             top: calc(100% - 84px)
-            left: 0
+            left: 40px
             width: 9999px
             height: 3px
             content: ''
             background: #1b1e64
-            +mq($medium)
+            // +mq($medium)
+            //     left: 40px
+            +mq($large)
                 display: none
 
         &.slick-dotted.slick-slider
@@ -44,7 +50,137 @@
             // padding-bottom: 137px
             min-height: 408px
 
+
     &__item
+        position: relative
+        padding-right: 35px
+        padding-left: 35px
+        +mq($large)
+            position: absolute
+            padding-right: 0
+            padding-left: 0
+        &:nth-child(1)
+            +mq($large)
+                bottom: 60px
+                left: 6px
+                width: 263px
+                height: 166px
+
+            .story__item-w
+                &::after
+                    +mq($large)
+                        top: 100%
+                        height: 44px
+
+                .story__year
+                    +mq($large)
+                        top: calc(100% + 62px)
+
+        &:nth-child(2)
+            +mq($large)
+                bottom: 338px
+                left: 154px
+                width: 290px
+                height: 153px
+            .story__item-w
+                +mq($large)
+                    background: url('../images/general/story-item-2.svg') 0% 100% no-repeat
+                &::after
+                    +mq($large)
+                        top: calc(100% + 2px)
+                        height: 288px
+                        left: calc(50% - 1px)
+
+                .story__year
+                    +mq($large)
+                        top: calc(100% + 310px)
+
+        &:nth-child(3)
+            +mq($large)
+                bottom: 146px
+                left: 305px
+                width: 320px
+                height: 164px
+            .story__item-w
+                +mq($large)
+                    width: auto
+                    background: url('../images/general/story-item-3.svg') 100% 100% no-repeat
+                &::after
+                    +mq($large)
+                        top: calc(100% + 2px)
+                        left: calc(50% + 6px)
+                        height: 45px
+
+                .story__year
+                    +mq($large)
+                        top: calc(100% + 61px)
+                        left: calc(50% + 32px)
+
+        &:nth-child(4)
+            +mq($large)
+
+                bottom: 406px
+                left: 496px
+                width: 275px
+                height: 153px
+                background-position: calc(100% + 15px) 100%
+            .story__item-w
+                +mq($large)
+                    background: url('../images/general/story-item-4.svg') 100% 100% no-repeat
+                &::after
+                    +mq($large)
+                        top: calc(100% + 2px)
+                        height: 272px
+                        left: calc(50% + 6px)
+
+                .story__year
+                    +mq($large)
+                        top: calc(100% + 292px)
+                        left: calc(50% + 32px)
+
+        &:nth-child(5)
+            +mq($large)
+                bottom: 236px
+                left: 664px
+                width: 276px
+                height: 132px
+            .story__item-w
+                +mq($large)
+                    background: url('../images/general/story-item-5.svg') 100% 100% no-repeat
+                &::after
+                    +mq($large)
+                        top: calc(100% + 2px)
+                        height: 60px
+                        left: calc(50% - 6px)
+
+                .story__year
+                    +mq($large)
+                        top: calc(100% + 72px)
+
+        &:nth-child(6)
+            +mq($large)
+                bottom: 455px
+                left: 840px
+                width: 248px
+                height: 160px
+            .story__item-w
+                +mq($large)
+                    background: url('../images/general/story-item-6.svg') 100% 100% no-repeat
+                &::after
+                    +mq($large)
+                        top: calc(100% + 2px)
+                        height: 244px
+                        left: calc(50% - 1px)
+
+                .story__year
+                    +mq($large)
+                        top: calc(100% + 265px)
+                        left: calc(50% + 32px)
+
+
+    &__item-w
+        padding-right: 35px
+        padding-left: 35px
         position: relative
         padding-top: 25px
         padding-right: 25px
@@ -55,15 +191,17 @@
         background: url('../images/general/story-item-mob.svg') 50% 100% no-repeat
         background-size: cover
 
-        +mq($medium)
+        +mq($large)
             position: absolute
+            margin-right: 0
             padding-top: 20px
             padding-right: 7px
             padding-bottom: 43px
             padding-left: 23px
+            max-width: 100%
             min-height: initial
-
             background: url('../images/general/story-item.svg') 50% 100% no-repeat
+
         &::after,
         &::before
             position: absolute
@@ -77,7 +215,7 @@
             height: 56px
             background: url('../images/general/line.svg') 50% 0 repeat-y
             background-size: 100%
-            +mq($medium)
+            +mq($large)
                 position: absolute
                 top: 100%
                 left: calc(50% - 5px)
@@ -94,116 +232,10 @@
             height: 12px
             background-color: #1b1e64
             border-radius: 50%
-            +mq($medium)
+            +mq($large)
                 display: none
 
-        &:nth-child(1)
-            +mq($medium)
-                bottom: 60px
-                left: 6px
-                width: 263px
-                height: 166px
-            &::after
-                +mq($medium)
-                    top: 100%
-                    height: 44px
 
-            .story__year
-                +mq($medium)
-                    top: calc(100% + 62px)
-
-        &:nth-child(2)
-            +mq($medium)
-                bottom: 338px
-                left: 154px
-                width: 290px
-                height: 153px
-                background: url('../images/general/story-item-2.svg') 0% 100% no-repeat
-
-            &::after
-                +mq($medium)
-                    top: calc(100% + 2px)
-                    height: 288px
-                    left: calc(50% - 1px)
-
-            .story__year
-                +mq($medium)
-                    top: calc(100% + 310px)
-
-        &:nth-child(3)
-            +mq($medium)
-                bottom: 146px
-                left: 305px
-                width: 320px
-                height: 164px
-                background: url('../images/general/story-item-3.svg') 100% 100% no-repeat
-
-            &::after
-                +mq($medium)
-                    top: calc(100% + 2px)
-                    left: calc(50% + 6px)
-                    height: 45px
-
-            .story__year
-                +mq($medium)
-                    top: calc(100% + 61px)
-                    left: calc(50% + 32px)
-
-        &:nth-child(4)
-            +mq($medium)
-
-                bottom: 406px
-                left: 496px
-                width: 275px
-                height: 153px
-                background-position: calc(100% + 15px) 100%
-                background: url('../images/general/story-item-4.svg') 100% 100% no-repeat
-            &::after
-                +mq($medium)
-                    top: calc(100% + 2px)
-                    height: 272px
-                    left: calc(50% + 6px)
-
-            .story__year
-                +mq($medium)
-                    top: calc(100% + 292px)
-                    left: calc(50% + 32px)
-
-
-        &:nth-child(5)
-            +mq($medium)
-                bottom: 236px
-                left: 664px
-                width: 276px
-                height: 132px
-                background: url('../images/general/story-item-5.svg') 100% 100% no-repeat
-            &::after
-                +mq($medium)
-                    top: calc(100% + 2px)
-                    height: 60px
-                    left: calc(50% - 6px)
-
-            .story__year
-                +mq($medium)
-                    top: calc(100% + 72px)
-
-        &:nth-child(6)
-            +mq($medium)
-                bottom: 455px
-                left: 840px
-                width: 248px
-                height: 160px
-                background: url('../images/general/story-item-6.svg') 100% 100% no-repeat
-            &::after
-                +mq($medium)
-                    top: calc(100% + 2px)
-                    height: 244px
-                    left: calc(50% - 1px)
-
-            .story__year
-                +mq($medium)
-                    top: calc(100% + 265px)
-                    left: calc(50% + 32px)
 
     &__year
         position: absolute
@@ -215,7 +247,7 @@
         font-weight: 700
         line-height: 1
         transform: translateX(-50%)
-        +mq($medium)
+        +mq($large)
             left: calc(50% + 20px)
             font-size: 26px
             font-weight: 500
@@ -227,6 +259,8 @@
         line-height: 1.571
         +mq($medium)
             font-size: 18px
+
+        +mq($large)
             line-height: 1.888
 
     .slick-dots

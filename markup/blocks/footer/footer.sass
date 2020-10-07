@@ -3,9 +3,12 @@
   overflow: hidden
 
   &__container
-    padding-top: 43px
-    padding-bottom: 20px
+    padding-top: 60px
+    padding-bottom: 60px
     flex-wrap: wrap
+    +mq($medium)
+      padding-top: 40px
+      padding-bottom: 40px
 
   &__row
     flex-wrap: wrap
@@ -19,13 +22,20 @@
       order: 1
       max-width: 190px
       +mq($medium)
+        max-width: 258px
+
+      +mq($large)
         order: 0
         max-width: 360px
     &:nth-child(2)
       order: 0
       max-width: 490px
       +mq($medium)
+        max-width: 290px
         order: 1
+      +mq($large)
+        max-width: 490px
+
     &:nth-child(3)
       order: 2
       margin-left: auto
@@ -33,6 +43,7 @@
       max-width: 100px
       +mq($medium)
         order: 2
+        margin-right: 0
 
   &__nav
     padding-top: 2px
@@ -46,7 +57,9 @@
     color: rgba(255, 255, 255, 0.6)
     font-weight: 400
     font-size: 14px
-    line-height: 3.071
+    line-height: 1.071
     +mq($medium)
+      margin-top: -50px
+    +mq($large)
       margin-top: 0
       font-size: 16px

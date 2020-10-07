@@ -13,14 +13,12 @@ body
   font-weight: 600
   font-size: 14px
   font-display: swap
-  // line-height: 1.1428
-  // letter-spacing: .7px
 
   &__inner
     flex-grow: 1
     flex-shrink: 0
     flex-basis: auto
-    // overflow: hidden
+
 
 .container
   margin: auto
@@ -30,6 +28,9 @@ body
   max-width: 1200px
   min-width: 320px
   +mq($medium)
+    padding-right: 60px
+    padding-left: 60px
+  +mq($large)
     padding-right: 15px
     padding-left: 15px
 
