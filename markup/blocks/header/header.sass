@@ -1,113 +1,183 @@
 .header
   position: relative
-  min-height: 1015px
+  min-height: 700px
   overflow: hidden
+  +mq($medium)
+    min-height: 1015px
+  &:after
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    content: ''
+    background: transparent
+    +tr(background .3s ease)
+
   &__container
     position: relative
     z-index: 1
-    padding-top: 20px
-    padding-bottom: 20px
+    padding-top: 30px
+    padding-bottom: 30px
     justify-content: space-between
-    // height: 100%
-  // &__logo
-  //   +mq($medium)
-  //     margin-right: auto
+    +mq($medium)
+      padding-top: 20px
+      padding-bottom: 20px
+
+  &__top
+    align-items: flex-start
+    &:after
+      z-index: -1
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      content: ''
+      background: transparent
+      // +tr(background .1s ease)
 
   &__nav
-    margin-top: 38px
+    margin-top: 6px
     margin-left: auto
+    +mq($medium)
+      margin-top: 38px
+
 
   &__body
     margin-left: auto
     padding-top: 76px
-    // padding-left: 473px
-    // padding-left: 546px
-    max-width: 630px
+    max-width: 250px
     width: 100%
     display: flex
     flex-direction: column
+    text-align: right
+    +mq($medium)
+      max-width: 630px
+      text-align: left
 
   &__title
     margin-bottom: 23px
     color: #1b1e64
-    font-size: 60px
+    font-size: 40px
+    line-height: 1.1
     font-weight: 500
-    line-height: 1.233
+    +mq($medium)
+      font-size: 60px
+      line-height: 1.233
+
     span
       display: block
       color: rgba(1, 1, 1, 0.5)
-      font-size: 18px
+      font-size: 14px
       font-weight: 400
       line-height: 1
+      +mq($medium)
+        font-size: 18px
+      &:last-child
+        margin-top: 10px
+        display: block
+        color: #1b1e64
+        font-size: 40px
+        line-height: 1.1
+        font-weight: 500
+        +mq($medium)
+          display: inline-block
+          font-size: 60px
+          line-height: 1.233
 
   &__stats
     display: flex
     flex-direction: column
 
   &__stats-item
-    margin-bottom: 18px
+    margin-bottom: 32px
+
+    +mq($medium)
+      margin-bottom: 18px
 
   &__stats-term
     color: rgba(1, 1, 1, 0.4)
-    font-size: 80px
+    font-size: 50px
     font-weight: 500
-
+    +mq($medium)
+      font-size: 80px
 
   &__stats-desc
-    margin-left: 87px
     color: #1b1e64
-    font-size: 26px
+    font-size: 22px
     font-weight: 500
-
-
-  // .tns-outer
-  //   position: absolute
-  //   top: 0
-  //   left: 0
-  //   bottom: 0
-  //   right: 0
+    +mq($medium)
+      margin-left: 87px
+      font-size: 26px
 
   &__slider
     position: absolute
     top: 0
     left: 0
     width: 100%
-
-    // height: 1015px
     height: 100%
     overflow: hidden
 
-  // .tns-controls
-  //   display: none
-  // .tns-outer
-  //   [data-action]
-  //     display: none
-
   &__slider-item
-    height: 1015px
-    // background-position: 50% 0
-    // background-repeat: no-repeat
-    // background-size: cover
     overflow: hidden
+    height: 700px
+    +mq($medium)
+      height: 1015px
 
   &__slider-image
     img
       width: 100%
       height: 100%
+      object-position: calc(50% + 40px) 0
       object-fit: cover
 
   &__cookies
     z-index: 1
     position: absolute
-    top: calc(100% - 50px)
+    top: calc(100% - 80px)
     left: 0
     right: 0
+    +mq($medium)
+      top: calc(100% - 50px)
+
+.header_open
+  &::after
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    content: ''
+    background: rgba(0, 0, 0, .4)
+    +tr(background .3s ease)
+
+  .header__container
+    padding-top: 0
+    padding-bottom: 0
+
+  .header__top
+    position: relative
+    margin-right: -40px
+    margin-left: -40px
+    padding-top: 30px
+    padding-right: 40px
+    padding-left: 40px
+
+    &::after
+      background: #ffffff
+      // animation: slide-in-bck-center 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
 
 
 .logo
   &__icon
-    width: 80px
+    max-width: 64px
+    +mq($medium)
+      width: 80px
 
 .logo_second
   .logo__icon
-    width: 189px
+    max-width: 158px
+
+    +mq($medium)
+      width: 189px

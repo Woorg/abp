@@ -1,21 +1,38 @@
 .footer
   background-color: #1b1e64
   overflow: hidden
+
   &__container
     padding-top: 43px
     padding-bottom: 20px
     flex-wrap: wrap
 
+  &__row
+    flex-wrap: wrap
+    +mq($medium)
+      flex-wrap: nowrap
+
+
   &__col
     width: 100%
     &:nth-child(1)
-      max-width: 360px
+      order: 1
+      max-width: 190px
+      +mq($medium)
+        order: 0
+        max-width: 360px
     &:nth-child(2)
+      order: 0
       max-width: 490px
+      +mq($medium)
+        order: 1
     &:nth-child(3)
+      order: 2
       margin-left: auto
-      margin-right: -11px
+      margin-right: -21px
       max-width: 100px
+      +mq($medium)
+        order: 2
 
   &__nav
     padding-top: 2px
@@ -25,7 +42,11 @@
     // margin-right: -20px
 
   &__copyright
+    margin-top: 40px
     color: rgba(255, 255, 255, 0.6)
-    font-size: 14px
     font-weight: 400
-    line-height: 1.071
+    font-size: 14px
+    line-height: 3.071
+    +mq($medium)
+      margin-top: 0
+      font-size: 16px

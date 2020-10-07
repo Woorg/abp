@@ -1,10 +1,15 @@
 .press
     overflow: hidden
     &__container
-        padding-top: 60px
-        padding-bottom: 60px
+        padding-top: 40px
+        padding-bottom: 40px
+        +mq($medium)
+            padding-top: 60px
+            padding-bottom: 60px
     &__title
-        padding-bottom: 66px
+        margin-bottom: 30px
+        +mq($medium)
+            margin-bottom: 66px
 
     &__slider-w
         position: relative
@@ -19,19 +24,25 @@
         padding-right: 35px
         padding-left: 35px
     &__date
-        margin-bottom: 9px
+        margin-bottom: 10px
         color: #1b1e64
         font-size: 16px
         font-weight: 300
         line-height: 1
+        +mq($medium)
+            margin-bottom: 9px
+
 
     &__slide-title
-        // margin-bottom: 17px
-        margin-bottom: 21px
+        margin-bottom: 17px
         padding-right: 20px
-        font-size: 26px
         font-weight: 500
-        line-height: 1.523
+        font-size: 22px
+        line-height: 1.454
+        +mq($medium)
+            margin-bottom: 21px
+            font-size: 26px
+            line-height: 1.523
     &__link
         text-decoration: none
         color: #000000
@@ -40,10 +51,14 @@
             color: lighten(#000000, 10)
             +tr(.3s ease)
     &__text
-        margin-bottom: 32px
-        font-size: 18px
+        margin-bottom: 20px
         font-weight: 400
-        line-height: 1.706
+        font-size: 14px
+        line-height: 1.571
+        +mq($medium)
+            margin-bottom: 32px
+            line-height: 1.706
+            font-size: 18px
     &__more
         color: #1b1e64
         font-size: 16px
@@ -75,18 +90,24 @@
     .slick-dotted
         &.slick-slider
             margin-bottom: 0
-            padding-bottom: 82px
+            padding-bottom: 40px
+            +mq($medium)
+                padding-bottom: 82px
 
     .slick-dots
         bottom: 0
         font-size: 0
         li
             margin: 0
-            margin-right: 11px
-            width: 16px
-            height: 15px
+            margin-right: 8px
+            width: 7px
+            height: 7px
             padding: 0
             cursor: pointer
+            +mq($medium)
+                margin-right: 11px
+                width: 16px
+                height: 15px
             &.slick-active
                 button
                     background-color: #1b1e64
@@ -94,12 +115,15 @@
             &:last-child
                 margin-right: 0
         button
-            width: 16px
-            height: 15px
+            padding: 0
+            width: 7px
+            height: 7px
             background-color: rgba(27, 30, 100, 0.1)
             border-radius: 50%
             +tr(.3s ease)
-
+            +mq($medium)
+                width: 16px
+                height: 15px
             &::before
                 display: none
             &:hover

@@ -1,4 +1,5 @@
 import svg4everybody from 'svg4everybody';
+import FastAverageColor from 'fast-average-color';
 // import { tns } from "tiny-slider/src/tiny-slider";
 // import $ from 'jquery';
 
@@ -37,22 +38,34 @@ import svg4everybody from 'svg4everybody';
 
   $(function() {
 
-    // Slider
+    // Nav
 
-    // if ($('.header__slider').length > 0) {
-    //   const $headerSlider = tns({
-    //     container: '.header__slider',
-    //     items: 1,
-    //     controls: false,
-    //     autoplay: true,
-    //     speed: 900,
-    //     nav: false,
-    //     autoHeight: true,
-    //     animateIn: 'tns-fadeIn',
-    //     animateOut: 'tns-fadeOut'
-    //   });
+    const $header = $('.header');
+    const $navTrigger = $('.nav__trigger');
 
-    // }
+    $navTrigger.on('click', function (e) {
+      e.preventDefault();
+      $(this).toggleClass('nav__trigger_active');
+      $header.toggleClass('header_open');
+
+
+    });
+
+    // Close nav
+
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('.nav__trigger_active').length) {
+        $navTrigger.removeClass('nav__trigger_active');
+        $header.removeClass('header_open');
+
+      }
+    });
+
+
+    // ScrollTo
+
+
+    // HeaderSlider
 
     const $headerSlider = $('.header__slider');
 
@@ -63,9 +76,7 @@ import svg4everybody from 'svg4everybody';
         dots: false,
         slidesToShow: 1,
         mobileFirst: true,
-        // infinite: false,
         loop: true,
-        // lazyLoad: 'ondemand',
         speed: 900,
         focusOnSelect: true,
         waitForAnimate: false,
@@ -79,6 +90,52 @@ import svg4everybody from 'svg4everybody';
 
     }
 
+    // Story slider
+
+    const $storySlider = $('.story__timeline');
+
+    if ($storySlider.length > 0) {
+      $storySlider.slick({
+        dots: true,
+        mobileFirst: true,
+        // loop: true,
+        // lazyLoad: 'ondemand',
+        // speed: 300,
+        // fade: true,
+        focusOnSelect: true,
+        waitForAnimate: true,
+        adaptiveHeight: true,
+        arrows: false,
+
+        responsive: [
+        {
+            breakpoint: 1,
+            settings: {
+              slidesToShow: 1,
+              // slidesToScroll: 1,
+              fade: true,
+              adaptiveHeight: true,
+          }
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            slidesToShow: 2,
+            // slidesToScroll: 1,
+            // fade: true,
+            adaptiveHeight: true,
+          }
+        },
+        {
+          breakpoint: 900,
+          settings: 'unslick',
+        }]
+      });
+
+    }
+
+
+    // Press slider
 
     const $pressSlider = $('.press__slider');
 
@@ -86,30 +143,30 @@ import svg4everybody from 'svg4everybody';
 
       $pressSlider.slick({
           slidesToScroll: 3,
-          slidesToShow: 3,
           dots: true,
           mobileFirst: true,
-          // infinite: false,
           loop: true,
           lazyLoad: 'ondemand',
-          // fade: true,
           speed: 300,
           focusOnSelect: true,
           waitForAnimate: false,
           adaptiveHeight: false,
-          // arrows: false,
-          // appendDots: $('.exhibition__dots'),
-          prevArrow: '.press__arrow_back',
-          nextArrow: '.press__arrow_next',
+          arrows: false,
 
           responsive: [{
-              breakpoint: 1,
-              settings: 'unslick'
-            },
-            {
+            breakpoint: 1,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            }
+          },
+          {
               breakpoint: 600,
               settings: {
                 slidesToShow: 3,
+                slidesToScroll: 3,
+                prevArrow: '.press__arrow_back',
+                nextArrow: '.press__arrow_next',
               }
             }
           ]
@@ -117,15 +174,97 @@ import svg4everybody from 'svg4everybody';
     }
 
 
-    // Video
+    // Books
+
+    const $booksCategory = $(".books__category");
+
+    if ($(window).width() <= 500) {
+      $booksCategory.eq(2).addClass('books__category_active');
+    }
+
+    $booksCategory.hover(function () {
+
+      $(".books__categories").find(".books__category_active").removeClass("books__category_active");
+      $(this).addClass("books__category_active");
+      if (!$(this).hasClass('.books__category_active')) {
+        $(this)
+          .siblings('.books__category')
+          .find('.books__cat-w')
+          .addClass('books__cat-w_active');
+      }
+    }, function () {
+      $(".books__categories").children(".books__category_active").removeClass("books__category_active");
+      $(this)
+        .siblings('.books__category')
+        .find('.books__cat-w')
+        .removeClass('books__cat-w_active');
+    });
+
+
+    // Middle color
+
+    const ac = new FastAverageColor();
+    const items = document.querySelectorAll('.books__category');
+
+    for (var i = 0; i < items.length; i++) {
+      if ($(window).width() >= 500) {
+        const
+          item = items[i],
+          image = item.querySelector('img'),
+          picture = item.querySelector('.books__picture'),
+
+          isBottom = item.classList.contains('item_bottom'),
+          gradient = item.querySelector('.books__gradient'),
+
+          size = 200,
+
+          color = ac.getColor(image, isBottom ? {
+            top: height - size,
+            height: size
+          } : {
+            height: size
+          }),
+          colorEnd = [].concat(color.value.slice(0, 3), 0.5).join(','),
+
+          lg = 'linear-gradient(to bottom, rgb(0, 0, 0, 0) 0%,  rgba(0, 0, 0, 0.5) 77%)';
+          gradient.style.backgroundColor = 'rgba(' + colorEnd + ')';
+          gradient.style.backgroundImage = lg;
+
+      } else {
+
+        const
+          item = items[i],
+          image = item.querySelector('img'),
+          picture = item.querySelector('.books__picture'),
+
+          isBottom = item.classList.contains('item_bottom'),
+          gradient = item.querySelector('.books__gradient'),
+
+          size = 100,
+
+          color = ac.getColor(image, isBottom ? {
+            top: width - size,
+            width: size
+          } : {
+              width: size
+            }),
+          colorEnd = [].concat(color.value.slice(0, 3), 0.5).join(','),
+          lg = 'linear-gradient(to left, rgb(0, 0, 0, 0) 0%,  rgba(0, 0, 0, 0.5) 91%)';
+          gradient.style.backgroundColor = 'rgba(' + colorEnd + ')';
+          gradient.style.backgroundImage = lg;
 
 
 
-    // Phone Mask
+      }
 
-    // $('.form__field_phone input').mask("+ 7(999)999-99-99", {
+    }
 
-    // });
+    // Cookies
+
+
+
+
+
 
 
 

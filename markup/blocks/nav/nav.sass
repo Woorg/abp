@@ -1,5 +1,54 @@
 .nav
-    // &__list
+    &__list
+        display: none
+        +mq($medium)
+            display: flex
+
+    &__trigger
+        +resetbutton()
+        +mq($medium)
+            display: none
+
+    &__icon_open
+        display: block
+        +tr(.3s ease)
+
+    &__icon_close
+        display: none
+        +tr(.3s ease)
+
+    // &__icon_close
+    //     display: none
+    //     opacity: 0
+    //     +tr(opacity .3s ease)
+
+    &__trigger_active
+        .nav__icon_open
+            display: none
+            +tr(.3s ease)
+        .nav__icon_close
+            display: block
+            +tr(.3s ease)
+        & + .nav__list
+                position: absolute
+                top: 100%
+                left: 0
+                right: 0
+                padding-top: 54px
+                padding-bottom: 10px
+                padding-left: 40px
+                padding-right: 40px
+                display: block
+                background: #fff
+                // animation: slide-in-bck-cente 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+                .nav__item
+                    margin-bottom: 40px
+                    margin-right: 0
+
+
+
+
+
 
     &__item
         margin-right: 40px
@@ -14,46 +63,46 @@
             color: lighten(#1b1e64, 10)
 
 
-
-
 .nav-sec
     &__list
         flex-wrap: wrap
-        // justify-content: space-between
         justify-content: flex-start
     &__item
-        // margin-right: 40px
         margin-bottom: 35px
         max-width: 25%
         width: 100%
         &:nth-child(1)
-            max-width: 28%
+            max-width: 210px
+            +mq($medium)
+                max-width: 28%
 
 
         &:nth-child(2)
             max-width: 18%
 
         &:nth-child(3)
-            max-width: 31%
+            max-width: 210px
+            +mq($medium)
+                max-width: 31%
 
         &:nth-child(4)
             max-width: 21%
 
         &:nth-child(5)
-            max-width: 28%
+            max-width: 210px
+            +mq($medium)
+                max-width: 28%
 
         &:nth-child(6)
             max-width: 19%
 
         &:nth-child(7)
-            max-width: 30%
+            max-width: 210px
+            +mq($medium)
+                max-width: 30%
 
         &:nth-child(8)
             max-width: 19%
-
-
-        // &:last-child
-        //     margin-right: 0
 
     &__link
         color: #ffffff
@@ -68,11 +117,22 @@
 
 .nav-sec_second
     .nav-sec__item
-        margin-bottom: 12px
+        margin-bottom: 6px
+        +mq($medium)
+            margin-bottom: 12px
+
     .nav-sec__link
-        color: #ffffff
-        font-size: 14px
+        color: #eaece9
+        font-size: 12px
         font-weight: 400
-        line-height: 1.071
+        line-height: 1
+        +mq($medium)
+            color: #ffffff
+            font-size: 14px
+            font-weight: 400
+            line-height: 1.071
         &:hover
             color: darken(#ffffff, 10)
+
+
+

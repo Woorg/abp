@@ -24,10 +24,14 @@ body
 
 .container
   margin: auto
-  padding-right: 15px
-  padding-left: 15px
+  padding-right: 40px
+  padding-left: 40px
   width: 100%
   max-width: 1200px
+  min-width: 320px
+  +mq($medium)
+    padding-right: 15px
+    padding-left: 15px
 
 img
   max-width: 100%

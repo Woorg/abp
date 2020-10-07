@@ -2,13 +2,20 @@
     background-color: #f7f7f8
     overflow: hidden
     &__container
-        padding-top: 60px
+        padding-top: 40px
         padding-bottom: 35px
+        +mq($medium)
+            padding-top: 60px
 
     &__title
-        margin-bottom: 45px
+        margin-bottom: 30px
+        +mq($medium)
+            margin-bottom: 45px
 
-    // &__row
+    &__row
+        flex-wrap: wrap
+        +mq($medium)
+            flex-wrap: nowrap
 
     &__col
         max-width: 430px
@@ -16,8 +23,11 @@
         flex-grow: 1
         flex-shrink: 1
         &:last-child
+            margin-top: 30px
             max-width: 670px
             width: 100%
+            +mq($medium)
+                margin-top: 0
             .global__langs
                 margin-right: -260px
                 display: flex
@@ -25,39 +35,71 @@
                 flex-wrap: wrap
             .global__lang
                 flex-grow: 1
-                max-width: 50%
                 flex-basis: auto
                 width: 100%
+                +mq($medium)
+                    max-width: 50%
+
                 &:nth-child(1)
                     order: 0
+                    +mq($medium)
+                        order: 0
                 &:nth-child(2)
-                    order: 1
-                &:nth-child(3)
-                    order: 2
-                &:nth-child(4)
                     order: 3
-                &:nth-child(5)
+
+                    +mq($medium)
+                        order: 1
+                &:nth-child(3)
+                    order: 1
+
+                    // order: 1
+                    +mq($medium)
+                        order: 2
+                &:nth-child(4)
                     order: 4
+                    // order: 4
+                    +mq($medium)
+                        order: 3
+                &:nth-child(5)
+                    order: 2
+                    // order: 3
+                    +mq($medium)
+                        order: 4
                 &:nth-child(6)
                     order: 5
+                    +mq($medium)
+                        order: 5
 
     &__col-title
-        margin-bottom: 35px
+        margin-bottom: 30px
         color: rgba(27, 30, 100, 0.2)
-        font-size: 40px
-        font-weight: 700
+        font-weight: 500
+        font-size: 24px
         line-height: 1
+        +mq($medium)
+            margin-bottom: 35px
+            font-weight: 700
+            font-size: 40px
 
     // &__langs
 
     &__lang
-        margin-bottom: 20px
         align-items: center
+        margin-bottom: 25px
+            margin-bottom: 20px
+
+        &:last-child
+            margin-bottom: 0
+            +mq($medium)
+                margin-bottom: 20px
+
 
     // &__icon
 
     &__lang-title
         padding-left: 18px
         color: #575757
-        font-size: 22px
+        font-size: 16px
         font-weight: 500
+        +mq($medium)
+            font-size: 22px
